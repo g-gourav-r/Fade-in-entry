@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Transition</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            opacity: 1;
+            transition: opacity 2s ease-in-out;
+        }
+
+        .hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- First Image -->
+<img id="image1" src="./assets/intro.gif" alt="First Image">
+
+<!-- Second Image (initially hidden) -->
+<img id="image2" class="hidden" src="./assets/background.gif" alt="Second Image">
+
+<script>
+    // Display the first image for 5 seconds
+    setTimeout(function() {
+        document.getElementById('image1').classList.add('hidden');
+        document.getElementById('image2').classList.remove('hidden');
+    }, 5000);
+</script>
+
+</body>
+</html>
